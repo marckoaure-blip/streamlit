@@ -272,11 +272,8 @@ def load_csv_data():
     try:
         # Update this path to your CSV file location
         csv_path = "water_quality_data.xlsx"  # Change this to your actual CSV path
-        df = pd.read_csv(csv_path)
-
-        # Assume your CSV has columns like: location, date, year, month, ph, temperature, etc.
-        # Adjust these column names based on your actual CSV structure
-
+        df = pd.read_excel(csv_path)
+        
         # Convert date column to datetime (adjust format as needed)
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
