@@ -270,7 +270,7 @@ def display_insights_section(wqi_value, analysis_data, classifications, location
 def load_csv_data():
     """Load and preprocess the CSV data"""
     # Update this path to your CSV file location
-    csv_path = r"water_quality_data.xlsx"  # Change this to your actual CSV path
+    csv_path = "r/water_quality_data.xlsx"  # Change this to your actual CSV path
     df = pd.read_excel(csv_path)
         
     # Convert date column to datetime (adjust format as needed)
