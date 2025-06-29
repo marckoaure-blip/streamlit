@@ -269,19 +269,19 @@ def display_insights_section(wqi_value, analysis_data, classifications, location
 @st.cache_data
 def load_csv_data():
     """Load and preprocess the CSV data"""
-        # Update this path to your CSV file location
-        csv_path = r"water_quality_data.xlsx"  # Change this to your actual CSV path
-        df = pd.read_excel(csv_path)
+    # Update this path to your CSV file location
+    csv_path = r"water_quality_data.xlsx"  # Change this to your actual CSV path
+    df = pd.read_excel(csv_path)
         
-        # Convert date column to datetime (adjust format as needed)
-        if 'date' in df.columns:
-            df['date'] = pd.to_datetime(df['date'])
-        elif 'year' in df.columns and 'month' in df.columns:
-            # If you have separate year and month columns
-            df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
+    # Convert date column to datetime (adjust format as needed)
+    if 'date' in df.columns:
+        df['date'] = pd.to_datetime(df['date'])
+    elif 'year' in df.columns and 'month' in df.columns:
+        # If you have separate year and month columns
+        df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
 
         # Sort by location and date
-        df = df.sort_values(['location', 'date'])
+    df = df.sort_values(['location', 'date'])
 
 
 # === Load assets (keep existing model loading for potential future use) ===
