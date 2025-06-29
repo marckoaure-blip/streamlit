@@ -271,7 +271,7 @@ def load_csv_data():
     """Load and preprocess the CSV data"""
     try:
         # Update this path to your CSV file location
-        csv_path = "./data/water_quality_data.csv"  # Change this to your actual CSV path
+        csv_path = "water_quality_data.xlsx"  # Change this to your actual CSV path
         df = pd.read_csv(csv_path)
 
         # Assume your CSV has columns like: location, date, year, month, ph, temperature, etc.
@@ -297,9 +297,9 @@ def load_csv_data():
 
 
 # === Load assets (keep existing model loading for potential future use) ===
-INPUT_SCALER_PATH = "./models/input_scaler_std.save"
-TARGET_SCALER_PATH = "./models/target_scaler_std.save"
-MODEL_PATH = "./models/hybrid_model_v2.keras"
+INPUT_SCALER_PATH = "input_scaler_std.save"
+TARGET_SCALER_PATH = "target_scaler_std.save"
+MODEL_PATH = "hybrid_model_v2.keras"
 INPUT_FEATURES = ['RAINFALL', 'TMAX', 'TMIN', 'RH', 'WIND_SPEED', 'WIND_DIRECTION', 'co2', 'so2']
 TARGET_FEATURES = ['temperature', 'ph', 'ammonia', 'nitrate', 'pho', 'dissolved_oxygen']
 
