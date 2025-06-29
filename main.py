@@ -269,9 +269,8 @@ def display_insights_section(wqi_value, analysis_data, classifications, location
 @st.cache_data
 def load_csv_data():
     """Load and preprocess the CSV data"""
-    try:
         # Update this path to your CSV file location
-        csv_path = "water_quality_data.xlsx"  # Change this to your actual CSV path
+        csv_path = r"water_quality_data.xlsx"  # Change this to your actual CSV path
         df = pd.read_excel(csv_path)
         
         # Convert date column to datetime (adjust format as needed)
@@ -283,14 +282,6 @@ def load_csv_data():
 
         # Sort by location and date
         df = df.sort_values(['location', 'date'])
-
-        return df
-    except FileNotFoundError:
-        st.error("CSV file not found. Please check the file path.")
-        return None
-    except Exception as e:
-        st.error(f"Error loading CSV: {str(e)}")
-        return None
 
 
 # === Load assets (keep existing model loading for potential future use) ===
